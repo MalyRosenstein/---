@@ -1,0 +1,116 @@
+/* הגדרות כלליות וצבעים */
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --text-color: #2d3436;
+    --accent-color: #6c5ce7;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--primary-gradient);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+}
+
+/* אנימציית כניסה למסכים - הופכת את המעבר ל"זז" וחלק */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.screen {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    animation: fadeInScale 0.5s ease-out; /* הפעלת האנימציה */
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* עיצוב כותרות */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+/* עיצוב שדות קלט (Inputs) כמו בתמונה */
+input, select, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #dfe6e9;
+    border-radius: 12px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+/* עיצוב כפתורים */
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 12px;
+    background: var(--accent-color);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* עיצוב כרטיסי מתכונים */
+.recipe-card {
+    background: white;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+    border: 1px solid #f1f2f6;
+}
+
+.recipe-card:hover {
+    transform: scale(1.03);
+}
+
+.recipe-card img {
+    border-radius: 12px;
+    object-fit: cover;
+}
